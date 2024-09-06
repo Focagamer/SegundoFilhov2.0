@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nome=“viewport” content=“width=device-width, initial=scale=1.0”> 
+    <link rel="stylesheet" href="estilo.css">
+    <title>CALCULADORA_BÁSICA</title>
+</head>
+<body>
+<div class="content">  
+<!--=====================================================-->
+<h1>=== SITE DA MATEMÁTICA ===</h1>
+<!--=====================================================-->
+<h2>1.CALCULADORA</h2>
+<p>Digite o primeiro número: </p> <input id="n1" type="number" placeholder="Digite aqui...">
+<p >Digite o segundo número: </p> <input id="n2" type="number" placeholder="Digite aqui...">
+<br>
+<hr width="700">
+<button id="soma" onclick="eventoSoma()">Clique aqui para saber a soma desses números</button>
+<div id="ressoma"></div>
+<div id="ifsoma"></div>
+<hr width="700">
+<button id="sub" onclick="eventoSub()">Clique aqui para saber a subtração desses números</button>
+<div id="ressub"></div>
+<hr width="700">
+<button id="mul" onclick="eventomult()">Clique aqui para saber a multiplicação desses números</button>
+<div id="resmult"></div>
+<hr width="700">
+<button id="div" onclick="eventodiv()">Clique aqui para saber a divisão desses números</button>
+<div id="resdiv"></div>
+<br><!--=====================================================-->
+<h2>2.SABER SE O NÚMERO É PAR OU IMPAR</h2>
+<p>Digite o número que queira saber se ele é par ou impar: </p>
+<input id="nparim" type="number" placeholder="Digite aqui...">
+<button onclick="parouimpar()">Clique para saber se é par ou impar</button>
+<p id="resparouimpar"></p>
+<br><!--=====================================================-->
+<h2>3.SABER SE O NÚMERO É COMPOSTO OU PRIMO</h2>
+<p>Digite o número que queira saber se ele é um número primo ou composto.</p>
+<input id="nu10" type="number" placeholder="Digite aqui...">
+<button onclick="primocomp()">Clique aqui para saber se é primo ou composto.</button>
+<p id="resprimocomp"></p>
+
+</div>
+<br><br><br><br><br>
+
+ <script>
+
+function eventoSoma(nu1,nu2,soma){
+    var nu1, nu2, soma;
+    nu1 = document.getElementById("n1").value;
+    nu2 = document.getElementById("n2").value;
+    nu1 = parseInt(nu1);
+    nu2 = parseInt(nu2);
+    soma = nu1+nu2;
+    document.getElementById("ressoma").innerHTML="A soma dos números é: " + soma;
+    
+}
+
+function eventoSub(nu3,nu4,sub){
+    var nu3, nu4, sub;
+    nu3 = document.getElementById("n1").value;
+    nu4 = document.getElementById("n2").value;
+    nu3 = parseInt(nu3);
+    nu4 = parseInt(nu4);
+    sub=nu3-nu4;
+    document.getElementById("ressub").innerHTML="A subtração dos números é: " + sub;
+}
+
+function eventomult(nu5,nu6,mult){
+    var nu5,nu6,mult;
+    nu5 = document.getElementById("n1").value;
+    nu6 = document.getElementById("n2").value;
+    nu5 = parseInt(nu5);
+    nu6 = parseInt(nu6);
+    mult=nu5*nu6;
+    document.getElementById("resmult").innerHTML="A multiplicação dos números é: " + mult;
+
+}
+
+function eventodiv(nu7,nu8,div){
+    var nu7,nu8,div;
+    nu7 = document.getElementById("n1").value;
+    nu8 = document.getElementById("n2").value;
+    nu7 = parseInt(nu7);
+    nu8 = parseInt(nu8);
+    div=nu7/nu8;
+    document.getElementById("resdiv").innerHTML="A divisão dos números é: " + div;
+}
+
+function parouimpar(nu9){
+    var nu9;
+    nu9 = document.getElementById("nparim").value;
+    if(nu9%2==0){
+        document.getElementById("resparouimpar").innerHTML="R.: Esse número é par";
+    }else if(nu9%2==1){
+        document.getElementById("resparouimpar").innerHTML="R.: Esse número é impar";
+    }else{
+        document.getElementById("resparouimpar").innerHTML="Nenhum número digitado";
+    }
+}
+
+function primocomp(nu10, i, cout){
+    var i, nu10, cout;
+    cout=0;
+    nu10 = document.getElementById("nu10").value;
+    for(i=0;i<=nu10;i++){
+        if(nu10%i==0){
+            cout=cout+1;
+        }
+    }
+    if(cout==2){
+        document.getElementById("resprimocomp").innerHTML="R.: Esse número é primo";
+    } else{
+        document.getElementById("resprimocomp").innerHTML="R.: Esse número é composto";
+    }
+}
+
+
+ </script>
+</body>
+
+</html>
